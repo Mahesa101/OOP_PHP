@@ -9,17 +9,20 @@ class Jasa
 {
     //cara memasukan nilai ke property satu langsung
     //Property (atribut)
-    public $namaPelanggan = "agus";
-    public $jenisDokumen = "pdf";
-    public $jumlahCetak = 5;
-    public $hargaPerLembar = 500;
+    public $namaPelanggan;
+    public $jenisDokumen;
+    public $jumlahCetak;
+    public $hargaPerLembar;
 
     //Method
-    public function sayHello()
+    //__construct adalah sebuah special method/magic method yang dimana saatu sebuah Instance di hasil kan maka construct method akan aktif
+    public function __construct($nama = "Customer", $jenis = "Jenis", $jumlah = "Jumlah", $harga = "Harga")
     {
-        return "hellow word!";
+        $this->namaPelanggan = $nama;
+        $this->jenisDokumen = $jenis;
+        $this->jumlahCetak = $jumlah;
+        $this->hargaPerLembar = $harga;
     }
-
 
     public function customer()
     {
@@ -27,50 +30,27 @@ class Jasa
         return "$this->namaPelanggan,$this->jumlahCetak";
     }
 }
-//kedua timpa
-// $CetakA = new Jasa();
-// $CetakA->namaPelanggan = "Budi";
-// var_dump($CetakA);
-// echo "<br>";
-// echo "<br>";
-// $CetakB = new Jasa();
-// $CetakB->namaPelanggan = "ani";
-// var_dump($CetakB);
-// echo "<br>";
-// echo "<br>";
-// //dapat juga menambahkan property
-// $CetakR = new Jasa();
-// $CetakR->Tambah = "Good";
-// var_dump($CetakR);
 
 
-// $CetakP = new Jasa();
-
-
-
-$cetakA = new Jasa();
-$cetakA->namaPelanggan = "Ujang";
-$cetakA->jenisDokumen = "JPG";
-$cetakA->jumlahCetak = "10";
-$cetakA->hargaPerLembar = 1000;
-
+$cetakA = new Jasa("Ujang", "JPG", 10, 1000);
+// $cetakA->namaPelanggan = "Ujang";
+// $cetakA->jenisDokumen = "JPG";
+// $cetakA->jumlahCetak = "10";
+// $cetakA->hargaPerLembar = 1000;
 echo "Customer : <br>
                 Nama: {$cetakA->namaPelanggan} <br>
                 Jenis Dokumen: {$cetakA->jenisDokumen}<br>
                 Jumlah Cetak: {$cetakA->jumlahCetak} kali<br>
                 Harga Perlembar : Rp{$cetakA->hargaPerLembar}";
 
-
 echo "<br>";
 echo "<br>";
 
-$cetakB = new Jasa();
-$cetakB->namaPelanggan = "Ani";
-$cetakB->jenisDokumen = "PNG";
-$cetakB->jumlahCetak = "20";
-$cetakB->hargaPerLembar = 1500;
-
-
+$cetakB = new Jasa("Ani", "PNG", 20, 1500);
+// $cetakB->namaPelanggan = "Ani";
+// $cetakB->jenisDokumen = "PNG";
+// $cetakB->jumlahCetak = 20;
+// $cetakB->hargaPerLembar = 1500;
 echo "Customer : <br>
                 Nama: {$cetakB->namaPelanggan} <br>
                 Jenis Dokumen: {$cetakB->jenisDokumen}<br>
@@ -80,8 +60,8 @@ echo "Customer : <br>
 echo "<br>";
 echo "<br>";
 
-$cetak = new Jasa();
-echo $cetak->sayHello();
+$cetakR = new Jasa("Budi");
+var_dump($cetakR);
 
 echo "<br>";
 echo "<br>";
