@@ -24,6 +24,7 @@ class Jasa
         $this->hargaPerLembar = $harga;
     }
 
+
     public function customer()
     {
         //tambah kan $this untuk mendapatkan nilai dari property dari luar scope//parent scope
@@ -31,12 +32,15 @@ class Jasa
     }
 }
 
-
+    //object type
+    //sebuah cara untuk menggunakan object menjadi sebuah value
 class info
 {
-
+//jasa di paramater bertujuan untuk menekankan atau mespesifikan sebuah nilai yang dapat di terima
+//karena paramter $cetak bersifat general
     public function infoCustomer(Jasa $cetak)
     {
+        //mengambil nilai dari sebuah property
         $hasil = "{$cetak->namaPelanggan} | Rp{$cetak->hargaPerLembar} Perlembar<br>
         {$cetak->jenisDokumen} <br>
         x{$cetak->jumlahCetak}";
