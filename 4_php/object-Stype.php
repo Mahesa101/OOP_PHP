@@ -36,7 +36,7 @@ class Jasa
     //sebuah cara untuk menggunakan object menjadi sebuah value
 class info
 {
-//jasa di paramater bertujuan untuk menekankan atau mespesifikan sebuah nilai yang dapat di terima
+//jasa di paramater bertujuan untuk  menspesifikan sebuah nilai yang dapat di terima
 //karena paramter $cetak bersifat general
     public function infoCustomer(Jasa $cetak)
     {
