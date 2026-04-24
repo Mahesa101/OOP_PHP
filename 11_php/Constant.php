@@ -16,7 +16,7 @@ class Jasa
     protected $discon = 0;
     private $urut;
     private static $jumlah = 0;
-    
+    const NAMACETAK ="Cetak Jaya";
 
     //Method
     //__construct adalah sebuah special method/magic method yang dimana saatu sebuah Instance di hasil kan maka construct method akan aktif
@@ -124,11 +124,11 @@ class A extends Jasa
         //dimana parent disini mengambil method dari parent nya
         $hasil = parent::data();
         if ($this->Ukuran == "A4") {
-            $hasil .= "| Detail : 21,0 x 29,7 cm | {$this->gramKertas} gsm";
+            $hasil .= "| Detail : 21,0 x 29,7 cm | {$this->gramKertas} gsm | BY ".self::NAMACETAK;
         } elseif ($this->Ukuran == "A3") {
-            $hasil .= "| Detail : 29,7 x 42,0 cm | {$this->gramKertas} gsm";
+            $hasil .= "| Detail : 29,7 x 42,0 cm | {$this->gramKertas} gsm | BY ".self::NAMACETAK;
         } elseif ($this->Ukuran == "A5") {
-            $hasil .= "| Detail : 14,8 x 21,0 cm | {$this->gramKertas} gsm";
+            $hasil .= "| Detail : 14,8 x 21,0 cm | {$this->gramKertas} gsm | BY ".self::NAMACETAK;
         } else {
             echo "<script> alert('ukuran tidak tersedia')</script>";
         }
@@ -149,11 +149,11 @@ class B extends Jasa
     {
         $hasil = parent::data();
         if ($this->Ukuran == "B5") {
-            $hasil .= "| Detail : 17,6 x 25,0 cm | {$this->jenisJilid}";
+            $hasil .= "| Detail : 17,6 x 25,0 cm | {$this->jenisJilid} | BY ".self::NAMACETAK;
         } elseif ($this->Ukuran == "B4") {
-            $hasil .= "| Detail : 25,0 x 35,3 cm | {$this->jenisJilid}";
+            $hasil .= "| Detail : 25,0 x 35,3 cm | {$this->jenisJilid} | BY ".self::NAMACETAK;
         } else {
-            echo "<script> alert('ukuran tidak tersedia')</script>";
+            echo "<script> alert('ukuran tidak tersedia')</script> | BY ".self::NAMACETAK;
         }
         return $hasil;
     }
@@ -174,11 +174,11 @@ class R extends Jasa
     {
         $hasil = "Ukuran {$this->Ukuran} : {$this->namaPelanggan} | {$this->jenisDokumen} | {$this->jumlahCetak} | {$this->hargaPerLembar}/perlembar ";
         if ($this->Ukuran == "2R") {
-            $hasil .= "| Detail : 6,0 x 9,0 cm | {$this->kualitasFoto}HD ";
+            $hasil .= "| Detail : 6,0 x 9,0 cm | {$this->kualitasFoto}HD | BY ".self::NAMACETAK;
         } elseif ($this->Ukuran == "4R") {
-            $hasil .= "| Detail : 10,2 x 15,2 cm | {$this->kualitasFoto}4K";
+            $hasil .= "| Detail : 10,2 x 15,2 cm | {$this->kualitasFoto}4K | BY ".self::NAMACETAK;
         } elseif ($this->Ukuran == "10R") {
-            $hasil .= "| Detail : 125,4 x 30,5 cm | {$this->kualitasFoto}4K";
+            $hasil .= "| Detail : 125,4 x 30,5 cm | {$this->kualitasFoto}4K | BY ".self::NAMACETAK;
         } else {
             echo "<script> alert('ukuran tidak tersedia')</script>";
         }
