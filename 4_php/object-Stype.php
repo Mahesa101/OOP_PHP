@@ -33,11 +33,11 @@ class Jasa
 }
 
     //object type
-    //sebuah cara untuk menggunakan object menjadi sebuah value
+    //sebuah cara untuk membari "syarat"
 class info
 {
-//jasa di paramater bertujuan untuk  menspesifikan sebuah nilai yang dapat di terima
-//karena paramter $cetak bersifat general
+//jasa di paramater bertujuan untuk  memberi "syarat" sebuah nilai yang dapat di terima
+//karena paramter $cetak bersifat general atau dapat di isi apa saja
     public function infoCustomer(Jasa $cetak)
     {
         //mengambil nilai dari sebuah property
